@@ -21,15 +21,15 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun reveal() {
-        val anim = overlay.circularRevealAnimator(centerX(), centerY(), 300)
-        anim.animationEnd { button.onClick { hide() } }
-        anim.start()
+        overlay.circularRevealAnimator(centerX(), centerY(), 300)
+            .animationEnd { button.onClick { hide() } }
+            .start()
     }
 
     fun hide() {
-        val anim = overlay.circularHideAnimator(centerX(), centerY(), 300)
-        anim.animationEnd { button.onClick { reveal() } }
-        anim.start()
+        overlay.circularHideAnimator(centerX(), centerY(), 300)
+            .animationEnd { button.onClick { reveal() } }
+            .start()
     }
 
     fun centerX() = overlay.width / 2
